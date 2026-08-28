@@ -48,10 +48,3 @@ Route::get('/zones', [ZoneController::class, 'index'])->name('zones');
 Route::get('/zones/{zone}', [ZoneController::class, 'show'])->name('zones.show');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/debug-env', function () {
-    return [
-        'APP_URL_config' => config('app.url'),
-        'APP_URL_env' => env('APP_URL'),
-        'asset_example' => asset('css/app.css'),
-    ];
-});
