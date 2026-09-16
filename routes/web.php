@@ -14,9 +14,14 @@ use App\Http\Controllers\ZoneController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CatechistController;
+use App\Http\Controllers\DebugController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// TEMPORARY debug route: verifies uploaded data still exists in the database.
+// Remove once troubleshooting is complete.
+Route::get('/debug/db-check', [DebugController::class, 'checkDatabase']);
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
